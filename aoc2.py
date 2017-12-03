@@ -51,5 +51,5 @@ def aoc2_2(inp):
 if __name__ == "__main__":
     with open("aoc2_input.txt") as f:
         puzzle = str(f.read())
-    # print(aoc2(puzzle))
+    print(aoc2(puzzle))
     print(aoc2_2(puzzle))
