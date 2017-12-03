@@ -20,6 +20,12 @@ def find_min_max(num_list):
         i = i + 1
     return min_n, max_n
 
+def find_evenly_divisible_nums(num_list):
+    for num in num_list:
+        for div in num_list:
+            if num!=div and num%div == 0:
+                return num, div
+
 
 def aoc2(inp):
     sequence = create_sequence(inp)
@@ -33,7 +39,17 @@ def aoc2(inp):
     return ris
 
 
+def aoc2_2(inp):
+    sequence = create_sequence(inp)
+    ris_list = []
+    for row in sequence:
+        num, div = find_evenly_divisible_nums(row)
+        ris_list.append(num/div)
+    return sum(ris_list)
+
+
 if __name__ == "__main__":
     with open("aoc2_input.txt") as f:
         puzzle = str(f.read())
-    print(aoc2(puzzle))
+    # print(aoc2(puzzle))
+    print(aoc2_2(puzzle))
